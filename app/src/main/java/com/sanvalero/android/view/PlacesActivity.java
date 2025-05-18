@@ -1,0 +1,46 @@
+package com.sanvalero.android.view;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.sanvalero.android.R;
+import com.sanvalero.android.adapter.PlacesAdapter;
+import com.sanvalero.android.callback.PlacesCallback;
+import com.sanvalero.android.model.Place;
+import com.sanvalero.android.presenter.PlacesPresenter;
+
+import java.util.List;
+
+public class PlacesActivity extends AppCompatActivity implements PlacesCallback {
+    private RecyclerView recyclerView;
+    private PlacesAdapter adapter;
+    private PlacesPresenter placesPresenter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.places_activity);
+
+        recyclerView = findViewById(R.id.placesRecyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        placesPresenter = new PlacesPresenter(this);
+        placesPresenter.fetchPlacesMock();
+    }
+
+    @Override
+    public void onPlacesLoaded(List<Place> places) {
+        adapter = new PlacesAdapter(places);
+        recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onPlacesLoadError(String errorMessage) {
+        Log.e("MainActivity", "Error: " + errorMessage);
+    }
+}

@@ -1,11 +1,16 @@
 package com.sanvalero.android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.sanvalero.android.view.PersonsActivity;
+import com.sanvalero.android.view.PlacesActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,13 +30,15 @@ public class MainActivity extends AppCompatActivity {
         personsTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                messageTextView.setText("Button clicked!");
+                Intent intent = new Intent(MainActivity.this, PersonsActivity.class);
+                startActivity(intent);
             }
         });
         placesTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                messageTextView.setText("Button clicked!");
+                Intent intent = new Intent(MainActivity.this, PlacesActivity.class);
+                startActivity(intent);
             }
         });
     }
