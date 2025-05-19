@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sanvalero.android.MainActivity;
 import com.sanvalero.android.R;
 import com.sanvalero.android.adapter.PersonsAdapter;
@@ -34,6 +35,12 @@ public class PersonsActivity extends BaseActivity implements PersonsCallback {
 
         personsPresenter = new PersonsPresenter(this);
         personsPresenter.fetchPersons();
+
+        FloatingActionButton addPersonFloatingActionButton = findViewById(R.id.personsAddPersonFloatingActionButton);
+        addPersonFloatingActionButton.setOnClickListener(view -> {
+            Intent intent = new Intent(this, NewPersonActivity.class);
+            startActivity(intent);
+        });
     }
 
     @Override

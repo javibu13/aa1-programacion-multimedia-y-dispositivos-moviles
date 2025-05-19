@@ -2,5 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/menu_home" android:title="@string/main_activity" />
     <item android:id="@+id/menu_persons" android:title="@string/persons_activity" />
+    <item android:id="@+id/menu_new_person" android:title="@string/new_person_activity" />
     <item android:id="@+id/menu_places" android:title="@string/places_activity" />
+    <item android:id="@+id/menu_new_place" android:title="@string/new_place_activity" />
 </menu>

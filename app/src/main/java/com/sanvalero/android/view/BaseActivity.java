@@ -26,6 +26,10 @@ public abstract class BaseActivity extends AppCompatActivity {
             startActivity(new Intent(this, PersonsActivity.class));
         } else if (id == R.id.menu_places) {
             startActivity(new Intent(this, PlacesActivity.class));
+        } else if (id == R.id.menu_new_person) {
+            startActivity(new Intent(this, NewPersonActivity.class));
+        } else if (id == R.id.menu_new_place) {
+            startActivity(new Intent(this, NewPlaceActivity.class));
         }
         return true;
     }

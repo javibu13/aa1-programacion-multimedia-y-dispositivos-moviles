@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sanvalero.android.MainActivity;
 import com.sanvalero.android.R;
 import com.sanvalero.android.adapter.PlacesAdapter;
@@ -35,6 +36,12 @@ public class PlacesActivity extends BaseActivity implements PlacesCallback {
 
         placesPresenter = new PlacesPresenter(this);
         placesPresenter.fetchPlaces();
+
+        FloatingActionButton addPlaceFloatingActionButton = findViewById(R.id.placesAddPlaceFloatingActionButton);
+        addPlaceFloatingActionButton.setOnClickListener(view -> {
+            Intent intent = new Intent(this, NewPlaceActivity.class);
+            startActivity(intent);
+        });
     }
 
     @Override
