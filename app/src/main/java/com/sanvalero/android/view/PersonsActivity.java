@@ -1,5 +1,6 @@
 package com.sanvalero.android.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -8,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.sanvalero.android.MainActivity;
 import com.sanvalero.android.R;
 import com.sanvalero.android.adapter.PersonsAdapter;
 import com.sanvalero.android.callback.PersonsCallback;
@@ -38,10 +40,10 @@ public class PersonsActivity extends AppCompatActivity implements PersonsCallbac
         if (persons.isEmpty()) {
             Log.w("PersonsActivity", "Callback ok");
             new AlertDialog.Builder(this)
-                    .setTitle("No Results")
-                    .setMessage("No persons were found from the API.")
-                    .setPositiveButton("OK", null)
-                    .show();
+                .setTitle("No Results")
+                .setMessage("No persons were found from the API.")
+                .setPositiveButton("OK", null)
+                .show();
         }
         adapter = new PersonsAdapter(persons);
         recyclerView.setAdapter(adapter);
@@ -51,9 +53,14 @@ public class PersonsActivity extends AppCompatActivity implements PersonsCallbac
     public void onPersonsLoadError(String errorMessage) {
         Log.e("PersonsActivity", "Error: " + errorMessage);
         new AlertDialog.Builder(this)
-                .setTitle("Failure")
-                .setMessage("Error occurred during data retrieve from API.")
-                .setNeutralButton("Close", null) // TODO: Go to MainView
-                .show();
+            .setTitle("Failure")
+            .setMessage("Error occurred during data retrieve from API.")
+            .setNeutralButton("Close", (dialog, which) -> {
+                Intent intent = new Intent(PersonsActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            })
+            .show();
     }
 }
