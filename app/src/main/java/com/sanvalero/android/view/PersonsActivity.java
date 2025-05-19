@@ -18,7 +18,7 @@ import com.sanvalero.android.presenter.PersonsPresenter;
 
 import java.util.List;
 
-public class PersonsActivity extends AppCompatActivity implements PersonsCallback {
+public class PersonsActivity extends BaseActivity implements PersonsCallback {
     private RecyclerView recyclerView;
     private PersonsAdapter adapter;
     private PersonsPresenter personsPresenter;

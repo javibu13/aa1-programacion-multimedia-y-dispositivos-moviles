@@ -8,11 +8,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.sanvalero.android.view.BaseActivity;
 import com.sanvalero.android.view.PersonsActivity;
 import com.sanvalero.android.view.PlacesActivity;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private Button personsTextButton, placesTextButton;
     private TextView titleMainTextView, subtitleMainTextView;

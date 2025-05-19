@@ -19,7 +19,7 @@ import com.sanvalero.android.presenter.PlacesPresenter;
 
 import java.util.List;
 
-public class PlacesActivity extends AppCompatActivity implements PlacesCallback {
+public class PlacesActivity extends BaseActivity implements PlacesCallback {
     private RecyclerView recyclerView;
     private PlacesAdapter adapter;
     private PlacesPresenter placesPresenter;
