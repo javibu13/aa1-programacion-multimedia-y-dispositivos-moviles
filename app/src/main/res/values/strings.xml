@@ -1,3 +1,44 @@
 <resources>
-    <string name="app_name">android</string>
+    <string name="app_name">API Events</string>
+    <!--  Main  -->
+    <string name="main_activity">Home</string>
+    <string name="title_main_activity">API Events</string>
+    <string name="subtitle_main_activity">Persons and Places manager</string>
+    <!--  Person  -->
+    <string name="person">Person</string>
+    <string name="persons">Persons</string>
+    <string name="id_person">ID</string>
+    <string name="full_name_person">Full Name</string>
+    <string name="first_name_person">First Name</string>
+    <string name="last_name_person">Last Name</string>
+    <string name="email_person">Email</string>
+    <string name="password_person">Password</string>
+    <string name="age_person">Age</string>
+    <string name="height_person">Height (m)</string>
+    <string name="interests_person">Interests</string>
+    <string name="birth_date_person">Birth Date</string>
+    <string name="verified_person">Verified</string>
+    <!--  Place  -->
+    <string name="place">Place</string>
+    <string name="places">Places</string>
+    <string name="id_place">ID</string>
+    <string name="name_place">Name</string>
+    <string name="address_place">Address</string>
+    <string name="capacity_place">Capacity</string>
+    <string name="area_place">Area (m²)</string>
+    <string name="inauguration_date_place">Inauguration Date</string>
+    <string name="has_parking_place">Has Parking</string>
+    <string name="equipment_place">Equipment</string>
+    <!--  All Persons  -->
+    <string name="persons_activity">Persons</string>
+    <!--  All Places  -->
+    <string name="places_activity">Places</string>
+    <!--  Person Details (& delete) -->
+    <string name="person_activity">Person</string>
+    <!--  Place Details (& delete)  -->
+    <string name="place_activity">Place</string>
+    <!--  Create Person  -->
+    <string name="new_person_activity">New Person</string>
+    <!--  Create Place  -->
+    <string name="new_place_activity">New Place</string>
 </resources>

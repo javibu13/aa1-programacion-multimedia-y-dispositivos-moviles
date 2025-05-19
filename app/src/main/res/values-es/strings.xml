@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Eventos API</string>
+    <!--  Main  -->
+    <string name="main_activity">Inicio</string>
+    <string name="title_main_activity">Eventos API</string>
+    <string name="subtitle_main_activity">Gestor de Personas y Lugares</string>
+    <!--  Person  -->
+    <string name="person">Persona</string>
+    <string name="persons">Personas</string>
+    <string name="id_person">ID</string>
+    <string name="full_name_person">Nombre completo</string>
+    <string name="first_name_person">Nombre</string>
+    <string name="last_name_person">Apellido</string>
+    <string name="email_person">E-mail</string>
+    <string name="password_person">Contraseña</string>
+    <string name="age_person">Edad</string>
+    <string name="height_person">Altura (m)</string>
+    <string name="interests_person">Intereses</string>
+    <string name="birth_date_person">Fecha de nacimiento</string>
+    <string name="verified_person">Verificado</string>
+    <!--  Place  -->
+    <string name="place">Lugar</string>
+    <string name="places">Lugares</string>
+    <string name="id_place">ID</string>
+    <string name="name_place">Nombre</string>
+    <string name="address_place">Dirección</string>
+    <string name="capacity_place">Capacidad</string>
+    <string name="area_place">Superficie (m²)</string>
+    <string name="inauguration_date_place">Fecha de inauguración</string>
+    <string name="has_parking_place">Tiene aparcamiento</string>
+    <string name="equipment_place">Equipamiento</string>
+    <!--  All Persons  -->
+    <string name="persons_activity">Personas</string>
+    <!--  All Places  -->
+    <string name="places_activity">Lugares</string>
+    <!--  Person Details (& delete) -->
+    <string name="person_activity">Persona</string>
+    <!--  Place Details (& delete)  -->
+    <string name="place_activity">Lugar</string>
+    <!--  Create Person  -->
+    <string name="new_person_activity">Nueva Persona</string>
+    <!--  Create Place  -->
+    <string name="new_place_activity">Nuevo Lugar</string>
+</resources>

@@ -17,14 +17,14 @@
         android:id="@+id/titleMainTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="API Events"
+        android:text="@string/title_main_activity"
         android:textSize="60sp" />
 
     <TextView
         android:id="@+id/subtitleMainTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Persons and Places manager"
+        android:text="@string/subtitle_main_activity"
         android:textSize="24sp" />
 
     <Space
@@ -38,7 +38,7 @@
         android:layout_marginTop="16dp"
         android:minWidth="175dp"
         android:padding="15dp"
-        android:text="Persons"
+        android:text="@string/persons"
         android:textAlignment="center"
         android:textSize="28sp" />
 
@@ -53,7 +53,7 @@
         android:layout_marginTop="16dp"
         android:minWidth="175dp"
         android:padding="15dp"
-        android:text="Places"
+        android:text="@string/places"
         android:textAlignment="center"
         android:textSize="28sp" />
 

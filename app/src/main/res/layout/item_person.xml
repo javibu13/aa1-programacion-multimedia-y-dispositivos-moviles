@@ -40,7 +40,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ID: "
+                    android:paddingRight="8dp"
+                    android:text="@string/id_person"
                     android:textColor="#707070"
                     android:textSize="15sp"
                     android:textStyle="italic" />
@@ -70,7 +71,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email: "
+                    android:paddingRight="8dp"
+                    android:text="@string/email_person"
                     android:textColor="#707070"
                     android:textSize="15sp"
                     android:textStyle="italic" />
@@ -102,7 +104,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Verified: "
+                    android:paddingRight="8dp"
+                    android:text="@string/verified_person"
                     android:textColor="#707070"
                     android:textSize="15sp"
                     android:textStyle="italic" />
@@ -135,7 +138,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Interests: "
+                android:paddingRight="8dp"
+                android:text="@string/interests_person"
                 android:textColor="#707070"
                 android:textSize="15sp"
                 android:textStyle="italic" />

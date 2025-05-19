@@ -25,6 +25,7 @@ public class PersonsActivity extends BaseActivity implements PersonsCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().setTitle(R.string.persons_activity);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.persons_activity);
 

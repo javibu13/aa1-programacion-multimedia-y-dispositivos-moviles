@@ -20,6 +20,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().setTitle(R.string.main_activity);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 

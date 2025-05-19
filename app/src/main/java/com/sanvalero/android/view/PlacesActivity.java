@@ -26,6 +26,7 @@ public class PlacesActivity extends BaseActivity implements PlacesCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().setTitle(R.string.places_activity);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.places_activity);
 

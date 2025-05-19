@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/menu_home"
-        android:icon="@android:drawable/ic_dialog_dialer"
-        android:title="Home" />
-    <item android:id="@+id/menu_persons" android:title="Persons" />
-    <item android:id="@+id/menu_places" android:title="Places" />
+    <item android:id="@+id/menu_home" android:title="@string/main_activity" />
+    <item android:id="@+id/menu_persons" android:title="@string/persons_activity" />
+    <item android:id="@+id/menu_places" android:title="@string/places_activity" />
 </menu>
