@@ -8,6 +8,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface PlaceService {
-    @GET("places") // reemplaza con el endpoint real
+    @GET("places")
     Call<List<Place>> getPlaces();
 }

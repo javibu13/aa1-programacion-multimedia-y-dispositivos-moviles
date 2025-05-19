@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.sanvalero.android.callback.PlacesCallback;
 import com.sanvalero.android.model.Place;
+import com.sanvalero.android.network.ApiClient;
 import com.sanvalero.android.service.PlaceService;
 
 import java.util.ArrayList;
@@ -17,27 +18,23 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class PlacesPresenter {
 
     private PlacesCallback callback;
-    private static final String BASE_URL = "http://ec2-44-218-249-120.compute-1.amazonaws.com:8081/";
 
     public PlacesPresenter(PlacesCallback callback) {
         this.callback = callback;
     }
 
     public void fetchPlaces() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        Retrofit retrofit = ApiClient.getClient();
 
         PlaceService service = retrofit.create(PlaceService.class);
         Call<List<Place>> call = service.getPlaces();
 
-        Log.w("PlacesActivity", "Pre-CallEnqueue");
+        Log.w("PlacesPresenter", "Pre-CallEnqueue");
 
         call.enqueue(new Callback<List<Place>>() {
             @Override
             public void onResponse(Call<List<Place>> call, Response<List<Place>> response) {
-                Log.w("PlacesActivity", "Callback went good");
+                Log.w("PlacesPresenter", "Callback ok");
                 if (response.isSuccessful()) {
                     List<Place> places = response.body();
                     callback.onPlacesLoaded(places);
@@ -48,7 +45,7 @@ public class PlacesPresenter {
 
             @Override
             public void onFailure(Call<List<Place>> call, Throwable t) {
-                Log.w("PlacesActivity", "Callback went good");
+                Log.w("PlacesPresenter", "Callback fail");
                 callback.onPlacesLoadError(t.getMessage());
             }
         });

@@ -51,5 +51,10 @@ public class PlacesActivity extends AppCompatActivity implements PlacesCallback 
     @Override
     public void onPlacesLoadError(String errorMessage) {
         Log.e("PlacesActivity", "Error: " + errorMessage);
+        new AlertDialog.Builder(this)
+                .setTitle("Failure")
+                .setMessage("Error occurred during data retrieve from API.")
+                .setNeutralButton("Close", null) // TODO: Go to MainView
+                .show();
     }
 }
