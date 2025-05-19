@@ -14,18 +14,19 @@ import com.sanvalero.android.view.PlacesActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView messageTextView;
-    private Button personsTextButton;
-    private Button placesTextButton;
+    private Button personsTextButton, placesTextButton;
+    private TextView titleMainTextView, subtitleMainTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        messageTextView = findViewById(R.id.messageTextView);
-        personsTextButton = findViewById(R.id.personsTextButton);
-        placesTextButton = findViewById(R.id.placesTextButton);
+        titleMainTextView = findViewById(R.id.titleMainTextView);
+        subtitleMainTextView = findViewById(R.id.subtitleMainTextView);
+
+        personsTextButton = findViewById(R.id.personsMainTextButton);
+        placesTextButton = findViewById(R.id.placesMainTextButton);
 
         personsTextButton.setOnClickListener(new View.OnClickListener() {
             @Override

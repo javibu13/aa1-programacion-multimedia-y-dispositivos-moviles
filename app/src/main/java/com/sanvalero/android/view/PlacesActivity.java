@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,17 +31,25 @@ public class PlacesActivity extends AppCompatActivity implements PlacesCallback 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         placesPresenter = new PlacesPresenter(this);
-        placesPresenter.fetchPlacesMock();
+        placesPresenter.fetchPlaces();
     }
 
     @Override
     public void onPlacesLoaded(List<Place> places) {
+        if (places.isEmpty()) {
+            Log.w("PlacesActivity", "Callback went good");
+            new AlertDialog.Builder(this)
+                .setTitle("No Results")
+                .setMessage("No places were found from the API.")
+                .setPositiveButton("OK", null)
+                .show();
+        }
         adapter = new PlacesAdapter(places);
         recyclerView.setAdapter(adapter);
     }
 
     @Override
     public void onPlacesLoadError(String errorMessage) {
-        Log.e("MainActivity", "Error: " + errorMessage);
+        Log.e("PlacesActivity", "Error: " + errorMessage);
     }
 }

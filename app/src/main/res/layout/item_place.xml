@@ -13,14 +13,21 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/placeNameTextView"
+            android:id="@+id/placeIdItemTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/placeLocationTextView"
+            android:id="@+id/placeNameItemTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#666" />
+
+        <TextView
+            android:id="@+id/placeEquipmentItemTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"

@@ -17,24 +17,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class PlacesPresenter {
 
     private PlacesCallback callback;
-    private static final String BASE_URL = "https://api.example.com/"; // reemplaza con la URL real
+    private static final String BASE_URL = "http://ec2-44-218-249-120.compute-1.amazonaws.com:8081/";
 
     public PlacesPresenter(PlacesCallback callback) {
         this.callback = callback;
-    }
-
-    public void fetchPlacesMock () {
-        List<Place> places = new ArrayList<>();
-        places.add(new Place("Puerto Venecia1", "Teatro Malibrán1"));
-        places.add(new Place("Puerto Venecia2", "Teatro Malibrán2"));
-        places.add(new Place("Puerto Venecia3", "Teatro Malibrán3"));
-        places.add(new Place("Puerto Venecia4", "Teatro Malibrán4"));
-        places.add(new Place("Puerto Venecia5", "Teatro Malibrán5"));
-        places.add(new Place("Puerto Venecia6", "Teatro Malibrán6"));
-        places.add(new Place("Puerto Venecia7", "Teatro Malibrán7"));
-        places.add(new Place("Puerto Venecia8", "Teatro Malibrán8"));
-        places.add(new Place("Puerto Venecia9", "Teatro Malibrán9"));
-        callback.onPlacesLoaded(places);
     }
 
     public void fetchPlaces() {
@@ -46,9 +32,12 @@ public class PlacesPresenter {
         PlaceService service = retrofit.create(PlaceService.class);
         Call<List<Place>> call = service.getPlaces();
 
+        Log.w("PlacesActivity", "Pre-CallEnqueue");
+
         call.enqueue(new Callback<List<Place>>() {
             @Override
             public void onResponse(Call<List<Place>> call, Response<List<Place>> response) {
+                Log.w("PlacesActivity", "Callback went good");
                 if (response.isSuccessful()) {
                     List<Place> places = response.body();
                     callback.onPlacesLoaded(places);
@@ -59,6 +48,7 @@ public class PlacesPresenter {
 
             @Override
             public void onFailure(Call<List<Place>> call, Throwable t) {
+                Log.w("PlacesActivity", "Callback went good");
                 callback.onPlacesLoadError(t.getMessage());
             }
         });
