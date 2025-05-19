@@ -1,5 +1,6 @@
 package com.sanvalero.android.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.sanvalero.android.MainActivity;
 import com.sanvalero.android.R;
 import com.sanvalero.android.adapter.PlacesAdapter;
 import com.sanvalero.android.callback.PlacesCallback;
@@ -52,9 +54,14 @@ public class PlacesActivity extends AppCompatActivity implements PlacesCallback 
     public void onPlacesLoadError(String errorMessage) {
         Log.e("PlacesActivity", "Error: " + errorMessage);
         new AlertDialog.Builder(this)
-                .setTitle("Failure")
-                .setMessage("Error occurred during data retrieve from API.")
-                .setNeutralButton("Close", null) // TODO: Go to MainView
-                .show();
+            .setTitle("Failure")
+            .setMessage("Error occurred during data retrieve from API.")
+            .setNeutralButton("Close", (dialog, which) -> {
+                Intent intent = new Intent(PlacesActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
+            })
+            .show();
     }
 }
