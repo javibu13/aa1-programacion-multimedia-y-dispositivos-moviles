@@ -49,4 +49,6 @@
     <string name="confirm_create_person_text_dialog">¿Está seguro que desea crear esta persona?</string>
     <string name="error_title_dialog">Error</string>
     <string name="error_api_text_dialog">Error durante la operación de la API</string>
+    <string name="confirm_create_place_text_dialog">¿Está seguro que desea crear este lugar?</string>
+    <string name="new_place_toast">Lugar creado</string>
 </resources>

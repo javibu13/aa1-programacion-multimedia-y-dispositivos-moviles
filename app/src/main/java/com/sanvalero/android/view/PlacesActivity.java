@@ -45,6 +45,12 @@ public class PlacesActivity extends BaseActivity implements PlacesCallback {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        placesPresenter.fetchPlaces();
+    }
+
+    @Override
     public void onPlacesLoaded(List<Place> places) {
         if (places.isEmpty()) {
             Log.w("PlacesActivity", "Callback went good");
