@@ -44,6 +44,12 @@ public class PersonsActivity extends BaseActivity implements PersonsCallback {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        personsPresenter.fetchPersons();
+    }
+
+    @Override
     public void onPersonsLoaded(List<Person> persons) {
         if (persons.isEmpty()) {
             Log.w("PersonsActivity", "Callback ok");

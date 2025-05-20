@@ -41,4 +41,12 @@
     <string name="new_person_activity">Nueva Persona</string>
     <!--  Create Place  -->
     <string name="new_place_activity">Nuevo Lugar</string>
+    <!--  Forms  -->
+    <string name="error_required">Este campo es obligatorio</string>
+    <string name="error_required_toast">Faltan campos obligatorios</string>
+    <string name="new_person_toast">Persona creada</string>
+    <string name="confirmation_title_dialog">Confirmar</string>
+    <string name="confirm_create_person_text_dialog">¿Está seguro que desea crear esta persona?</string>
+    <string name="error_title_dialog">Error</string>
+    <string name="error_api_text_dialog">Error durante la operación de la API</string>
 </resources>

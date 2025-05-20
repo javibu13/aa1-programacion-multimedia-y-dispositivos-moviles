@@ -41,4 +41,11 @@
     <string name="new_person_activity">New Person</string>
     <!--  Create Place  -->
     <string name="new_place_activity">New Place</string>
+    <string name="error_required">This field is required</string>
+    <string name="error_required_toast">Missing required fields</string>
+    <string name="new_person_toast">Person created</string>
+    <string name="confirmation_title_dialog">Confirm</string>
+    <string name="confirm_create_person_text_dialog">Are you sure you want to create this person?</string>
+    <string name="error_title_dialog">Error</string>
+    <string name="error_api_text_dialog">Error during API operation</string>
 </resources>
