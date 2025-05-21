@@ -64,7 +64,8 @@ public class NewPlaceActivity extends BaseActivity implements NewPlaceCallback, 
             if (validateInputs()) {
                 Place place = new Place();
                 place.setName(nameEditText.getText().toString().trim());
-                place.setAddress(addressEditText.getText().toString().trim());
+                String customAddress = Utils.generateCustomAddress(addressEditText.getText().toString().trim(), coordinates);
+                place.setAddress(customAddress);
                 try {
                     place.setCapacity(Integer.parseInt(capacityEditText.getText().toString().trim()));
                 } catch (NumberFormatException e) {
@@ -126,6 +127,10 @@ public class NewPlaceActivity extends BaseActivity implements NewPlaceCallback, 
         if (addressEditText.getText().toString().trim().isEmpty()) {
             addressEditText.setError(getString(R.string.error_required));
             valid = false;
+        }
+
+        if (coordinates.isEmpty()) {
+            coordinates = "-0.972472, 41.700241";
         }
 
         if (capacityEditText.getText().toString().trim().isEmpty()) {
