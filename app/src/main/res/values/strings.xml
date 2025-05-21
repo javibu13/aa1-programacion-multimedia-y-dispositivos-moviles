@@ -56,4 +56,7 @@
     <string name="favorite_button">Add to Favorites</string>
     <string name="new_address_from_map">New address set using map</string>
     <string name="address_not_found_in_map">Address not found at that point</string>
+    <string name="confirm_update_place_text_dialog" >Are you sure you want to update this place?</string>
+    <string name="place_updated" >Place updated</string>
+    <string name="update_not_allowed" >Activated edit mode is needed to execute update</string>
 </resources>

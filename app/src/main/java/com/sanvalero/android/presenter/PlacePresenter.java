@@ -52,4 +52,32 @@ public class PlacePresenter {
             }
         });
     }
+
+    public void updatePlace(Place place) {
+        Retrofit retrofit = ApiClient.getClient();
+
+        PlaceService service = retrofit.create(PlaceService.class);
+        Call<Place> call = service.updatePlaceById(id, place);
+
+        Log.w("PlacePresenter", "Pre-CallEnqueue");
+
+        call.enqueue(new Callback<Place>() {
+            @Override
+            public void onResponse(Call<Place> call, Response<Place> response) {
+                Log.w("PlacePresenter", "Callback ok");
+                if (response.isSuccessful()) {
+                    Place place = response.body();
+                    callback.onPlaceUpdated(place);
+                } else {
+                    callback.onPlaceUpdateError(response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Place> call, Throwable t) {
+                Log.w("PlacePresenter", "Callback fail");
+                callback.onPlaceUpdateError(t.getMessage());
+            }
+        });
+    }
 }

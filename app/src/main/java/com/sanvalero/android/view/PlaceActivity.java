@@ -85,38 +85,43 @@ public class PlaceActivity extends BaseActivity implements PlaceCallback, Mapbox
         placePresenter = new PlacePresenter(this, id);
         placePresenter.fetchPlace();
 
-//        createButton.setOnClickListener(view -> {
-//            if (validateInputs()) {
-//                Place place = new Place();
-//                place.setName(nameEditText.getText().toString().trim());
-//                String customAddress = Utils.generateCustomAddress(addressEditText.getText().toString().trim(), coordinates);
-//                place.setAddress(customAddress);
-//                try {
-//                    place.setCapacity(Integer.parseInt(capacityEditText.getText().toString().trim()));
-//                } catch (NumberFormatException e) {
-//                    place.setCapacity(0);
-//                }
-//                try {
-//                    place.setArea(Double.parseDouble(areaEditText.getText().toString().trim()));
-//                } catch (NumberFormatException e) {
-//                    place.setArea(0.0);
-//                }
-//                place.setInaugurationDate(inaugurationDateEditText.getText().toString().trim());
-//                place.setHasParking(hasParkingCheckBox.isChecked());
-//                place.setEquipment(equipmentEditText.getText().toString().trim());
-//
-//                new AlertDialog.Builder(this)
-//                        .setTitle(R.string.confirmation_title_dialog)
-//                        .setMessage(R.string.confirm_create_place_text_dialog)
-//                        .setPositiveButton(android.R.string.ok, (dialog, which) -> {
-//                            createPlace(place);
-//                        })
-//                        .setNegativeButton(android.R.string.cancel, null)
-//                        .show();
-//            } else {
-//                Toast.makeText(this, getString(R.string.error_required_toast), Toast.LENGTH_LONG).show();
-//            }
-//        });
+        updateFab.setOnClickListener(view -> {
+            if (!allowEditSwitch.isChecked()) {
+                // Allow update only if edit is allowed too
+                Toast.makeText(this, getString(R.string.update_not_allowed), Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (validateInputs()) {
+                Place place = new Place();
+                place.setName(nameEditText.getText().toString().trim());
+                String customAddress = Utils.generateCustomAddress(addressEditText.getText().toString().trim(), coordinates);
+                place.setAddress(customAddress);
+                try {
+                    place.setCapacity(Integer.parseInt(capacityEditText.getText().toString().trim()));
+                } catch (NumberFormatException e) {
+                    place.setCapacity(0);
+                }
+                try {
+                    place.setArea(Double.parseDouble(areaEditText.getText().toString().trim()));
+                } catch (NumberFormatException e) {
+                    place.setArea(0.0);
+                }
+                place.setInaugurationDate(inaugurationDateEditText.getText().toString().trim());
+                place.setHasParking(hasParkingCheckBox.isChecked());
+                place.setEquipment(equipmentEditText.getText().toString().trim());
+
+                new AlertDialog.Builder(this)
+                        .setTitle(R.string.confirmation_title_dialog)
+                        .setMessage(R.string.confirm_update_place_text_dialog)
+                        .setPositiveButton(android.R.string.ok, (dialog, which) -> {
+                            updatePlace(place);
+                        })
+                        .setNegativeButton(android.R.string.cancel, null)
+                        .show();
+            } else {
+                Toast.makeText(this, getString(R.string.error_required_toast), Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     private void onEditableSwitchChange(boolean isChecked) {
@@ -188,7 +193,7 @@ public class PlaceActivity extends BaseActivity implements PlaceCallback, Mapbox
         }
 
         if (coordinates.isEmpty()) {
-            coordinates = "-0.972472, 41.700241";
+            coordinates = "-7.094123746230553, 107.66860246750076";
         }
 
         if (capacityEditText.getText().toString().trim().isEmpty()) {
@@ -215,8 +220,7 @@ public class PlaceActivity extends BaseActivity implements PlaceCallback, Mapbox
     }
 
     private void updatePlace(Place place) {
-        // TODO: Implement
-//        new UpdatePlacePresenter(this, place);
+        placePresenter.updatePlace(place);
     }
 
     @Override
@@ -255,17 +259,25 @@ public class PlaceActivity extends BaseActivity implements PlaceCallback, Mapbox
 
     @Override
     public void onPlaceDeleteError(String errorMessage) {
-
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.error_title_dialog)
+                .setMessage(R.string.error_api_text_dialog)
+                .setNeutralButton(android.R.string.ok, null)
+                .show();
     }
 
     @Override
     public void onPlaceUpdated(Place place) {
-
+        Toast.makeText(this, getString(R.string.place_updated), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onPlaceUpdateError(String errorMessage) {
-
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.error_title_dialog)
+                .setMessage(R.string.error_api_text_dialog)
+                .setNeutralButton(android.R.string.ok, null)
+                .show();
     }
 
     @Override

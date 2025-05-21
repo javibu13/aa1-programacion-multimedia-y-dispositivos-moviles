@@ -130,7 +130,7 @@ public class NewPlaceActivity extends BaseActivity implements NewPlaceCallback, 
         }
 
         if (coordinates.isEmpty()) {
-            coordinates = "-0.972472, 41.700241";
+            coordinates = "-7.094123746230553, 107.66860246750076";
         }
 
         if (capacityEditText.getText().toString().trim().isEmpty()) {

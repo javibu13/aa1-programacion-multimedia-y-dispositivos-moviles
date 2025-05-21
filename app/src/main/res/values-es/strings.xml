@@ -56,4 +56,7 @@
     <string name="favorite_button">Añadir a Favoritos</string>
     <string name="new_address_from_map">Nueva dirección asignada mediante el mapa</string>
     <string name="address_not_found_in_map">Dirección no encontrada en ese punto</string>
+    <string name="confirm_update_place_text_dialog">¿Está seguro que desea actualizar este lugar?</string>
+    <string name="place_updated">Lugar actualizado</string>
+    <string name="update_not_allowed">" Es necesario activar el modo de edición para ejecutar la actualización"</string>
 </resources>
