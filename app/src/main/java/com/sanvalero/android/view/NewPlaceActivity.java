@@ -2,6 +2,7 @@ package com.sanvalero.android.view;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
+import com.mapbox.geojson.Point;
 import com.sanvalero.android.R;
 import com.sanvalero.android.callback.NewPlaceCallback;
 import com.sanvalero.android.fragment.MapboxFragment;
@@ -20,10 +22,11 @@ import com.sanvalero.android.util.Utils;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class NewPlaceActivity extends BaseActivity implements NewPlaceCallback {
+public class NewPlaceActivity extends BaseActivity implements NewPlaceCallback, MapboxFragment.OnAddressSelectedListener {
 
     private EditText nameEditText;
     private EditText addressEditText;
+    private String coordinates;
     private EditText capacityEditText;
     private EditText areaEditText;
     private EditText inaugurationDateEditText;
@@ -39,6 +42,7 @@ public class NewPlaceActivity extends BaseActivity implements NewPlaceCallback {
 
         nameEditText = findViewById(R.id.nameNewPlaceEditText);
         addressEditText = findViewById(R.id.addressNewPlaceEditText);
+        coordinates = "";
         capacityEditText = findViewById(R.id.capacityNewPlaceEditText);
         areaEditText = findViewById(R.id.areaNewPlaceEditText);
         inaugurationDateEditText = findViewById(R.id.inaugurationDateNewPlaceEditText);
@@ -164,5 +168,13 @@ public class NewPlaceActivity extends BaseActivity implements NewPlaceCallback {
                 .setMessage(R.string.error_api_text_dialog)
                 .setNeutralButton(android.R.string.ok, null)
                 .show();
+    }
+
+    @Override
+    public void onAddressSelected(String address, Point point) {
+        coordinates = point.coordinates().toString().replace('[', ' ').replace(']', ' ').trim();
+        addressEditText.setText(address);
+        Log.v("NEW PLACE", coordinates);
+        Toast.makeText(this, getString(R.string.new_address_from_map), Toast.LENGTH_SHORT).show();
     }
 }

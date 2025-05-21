@@ -49,10 +49,11 @@ android {
 }
 
 dependencies {
-    implementation("com.mapbox.maps:android:11.7.1")
+    implementation("com.mapbox.maps:android:11.12.1")
+    implementation("com.mapbox.search:mapbox-search-android:2.12.0-beta.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.2.1")
     implementation("androidx.recyclerview:recyclerview:1.3.1")
     implementation("androidx.cardview:cardview:1.0.0")

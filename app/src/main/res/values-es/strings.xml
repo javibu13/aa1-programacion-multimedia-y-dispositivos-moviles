@@ -51,4 +51,9 @@
     <string name="error_api_text_dialog">Error durante la operación de la API</string>
     <string name="confirm_create_place_text_dialog">¿Está seguro que desea crear este lugar?</string>
     <string name="new_place_toast">Lugar creado</string>
+    <string name="update_button">Actualizar</string>
+    <string name="delete_button">Eliminar</string>
+    <string name="favorite_button">Añadir a Favoritos</string>
+    <string name="new_address_from_map">Nueva dirección asignada mediante el mapa</string>
+    <string name="address_not_found_in_map">Dirección no encontrada en ese punto</string>
 </resources>
