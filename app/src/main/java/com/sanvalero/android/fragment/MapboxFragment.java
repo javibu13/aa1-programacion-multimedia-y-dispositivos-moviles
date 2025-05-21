@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -48,12 +49,19 @@ public class MapboxFragment extends Fragment {
         void onAddressSelected(String address, Point point);
     }
 
+    public interface OnMapboxReady {
+        void onMapboxReady();
+    }
+
+
     private MapView mapView;
     private SearchEngine searchEngine;
     private AsyncOperationTask searchRequestTask;
     private OnAddressSelectedListener addressListener;
+    private OnMapboxReady mapboxReadyListener;
     private static Point staticPoint;
     private PointAnnotationManager pointAnnotationManager;
+    private Switch allowEditSwitch;
 
     private final SearchCallback searchCallback = new SearchCallback() {
         @Override
@@ -80,6 +88,14 @@ public class MapboxFragment extends Fragment {
         }
     };
 
+    public MapboxFragment() {
+        this.allowEditSwitch = null;
+    }
+
+    public MapboxFragment(Switch allowEditSwitch) {
+        this.allowEditSwitch = allowEditSwitch;
+    }
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_mapbox, container, false);
@@ -100,14 +116,10 @@ public class MapboxFragment extends Fragment {
                 pointAnnotationManager.addClickListener(pointAnnotation -> {
                     Point point = pointAnnotation.getPoint();
 
-                    mapView.getMapboxMap().setCamera(
-                            new CameraOptions.Builder()
-                                    .center(point)
-                                    .zoom(16.0) // Pretty close
-                                    .build()
-                    );
+                    this.centerView(point, 16.0);
                     return true;
                 });
+                mapboxReadyListener.onMapboxReady();
             }
         });
 
@@ -116,7 +128,10 @@ public class MapboxFragment extends Fragment {
         if (gesturesPlugin != null) {
             gesturesPlugin.addOnMapClickListener(point -> {
                 Log.d("MAP_CLICK", "Lat: " + point.latitude() + ", Lon: " + point.longitude());
-
+                if (allowEditSwitch != null && !allowEditSwitch.isChecked()) {
+                    // If there is a switch defined that allows map edition and it is not checked, return and end map click logic
+                    return true;
+                }
                 // Delete previous markers
                 pointAnnotationManager.deleteAll();
                 // Add the new marker
@@ -138,14 +153,24 @@ public class MapboxFragment extends Fragment {
         return root;
     }
 
-    private void addMarker(Point point) {
+    public void addMarker(Point point) {
         if (pointAnnotationManager == null) {
+            Log.w("MapFragment", "pointAnnotationManager == null");
             return;
         }
         PointAnnotationOptions pointAnnotationOptions = new PointAnnotationOptions()
                 .withPoint(Point.fromLngLat(point.longitude(), point.latitude()))
                 .withIconImage(BitmapFactory.decodeResource(getResources(), R.drawable.red_marker));
         pointAnnotationManager.create(pointAnnotationOptions);
+    }
+
+    public void centerView(Point point, Double zoom) {
+        mapView.getMapboxMap().setCamera(
+                new CameraOptions.Builder()
+                        .center(point)
+                        .zoom(zoom)
+                        .build()
+        );
     }
 
     @Override
@@ -155,6 +180,9 @@ public class MapboxFragment extends Fragment {
             addressListener = (OnAddressSelectedListener) context;
         } else {
             throw new ClassCastException(context.toString() + " must implement OnAddressSelectedListener");
+        }
+        if (context instanceof OnMapboxReady) {
+            mapboxReadyListener = (OnMapboxReady) context;
         }
     }
 

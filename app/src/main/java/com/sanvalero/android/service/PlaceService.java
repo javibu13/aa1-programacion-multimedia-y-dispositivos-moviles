@@ -17,14 +17,14 @@ public interface PlaceService {
     Call<List<Place>> getPlaces();
 
     @GET("places/{idPlace}")
-    Call<Place> getPlaceById(@Path("idPlace") int idPlace);
+    Call<Place> getPlaceById(@Path("idPlace") Long idPlace);
 
     @POST("places")
     Call<Place> createPlace(@Body Place place);
 
     @PUT("places/{idPlace}")
-    Call<Place> updatePlaceById(@Path("idPlace") int idPlace, @Body Place place);
+    Call<Place> updatePlaceById(@Path("idPlace") Long idPlace, @Body Place place);
 
     @DELETE("places/{idPlace}")
-    Call<Void> deletePlaceById(@Path("idPlace") int idPlace);
+    Call<Void> deletePlaceById(@Path("idPlace") Long idPlace);
 }

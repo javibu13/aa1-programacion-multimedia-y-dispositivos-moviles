@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sanvalero.android.R;
+import com.sanvalero.android.callback.PlacesCallback;
 import com.sanvalero.android.model.Place;
 import com.sanvalero.android.util.Utils;
 
@@ -16,9 +17,11 @@ import java.util.List;
 
 public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.PlaceViewHolder> {
 
+    private PlacesCallback callback;
     private List<Place> placeList;
 
-    public PlacesAdapter(List<Place> placeList) {
+    public PlacesAdapter(PlacesCallback callback, List<Place> placeList) {
+        this.callback = callback;
         this.placeList = placeList;
     }
 
@@ -40,7 +43,8 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.PlaceViewH
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("PlaceAdapter", "Clicked: " + place.getName());
+                Log.d("PlaceAdapter", "Clicked: " + place.getId());
+                callback.onPlaceClicked(place.getId());
             }
         });
     }

@@ -60,7 +60,7 @@ public class PlacesActivity extends BaseActivity implements PlacesCallback {
                 .setPositiveButton("OK", null)
                 .show();
         }
-        adapter = new PlacesAdapter(places);
+        adapter = new PlacesAdapter(this, places);
         recyclerView.setAdapter(adapter);
     }
 
@@ -78,4 +78,13 @@ public class PlacesActivity extends BaseActivity implements PlacesCallback {
             })
             .show();
     }
+
+    @Override
+    public void onPlaceClicked(Long idPlaceClicked) {
+        Intent intent = new Intent(PlacesActivity.this, PlaceActivity.class);
+        intent.putExtra("place_id", idPlaceClicked);
+        startActivity(intent);
+    }
+
+
 }

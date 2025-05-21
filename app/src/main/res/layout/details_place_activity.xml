@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/namePlaceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:maxLength="100"
+            android:hint="@string/name_place"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/addressPlaceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:hint="@string/address_place"
+            android:inputType="textPostalAddress"
+            android:maxLength="200" />
+
+        <FrameLayout
+            android:id="@+id/mapFragmentPlaceContainer"
+            android:layout_width="match_parent"
+            android:layout_height="230dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/capacityPlaceEditText"
+                android:layout_width="189dp"
+                android:layout_height="65dp"
+                android:hint="@string/capacity_place"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/areaPlaceEditText"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:hint="@string/area_place"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/inaugurationDatePlaceEditText"
+                android:layout_width="189dp"
+                android:layout_height="65dp"
+                android:hint="@string/inauguration_date_place"
+                android:inputType="date" />
+
+            <CheckBox
+                android:id="@+id/hasParkingPlaceCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/has_parking_place"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/equipmentPlaceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:hint="@string/equipment_place"
+            android:inputType="textMultiLine" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:paddingLeft="0dp"
+            android:paddingTop="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp">
+
+            <Switch
+                android:id="@+id/allowEditPlaceSwitch"
+                android:layout_width="145dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layoutDirection="rtl"
+                android:text="Editable"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/favoritePlaceFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="@string/favorite_button"
+                android:src="@android:drawable/btn_star_big_on"
+                app:backgroundTint="@color/design_default_color_secondary"
+                app:tint="@android:color/white" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/deletePlaceFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="@string/delete_button"
+                android:src="@android:drawable/ic_menu_delete"
+                app:backgroundTint="@android:color/holo_red_dark"
+                app:tint="@android:color/white" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/updatePlaceFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/update_button"
+                android:src="@android:drawable/ic_menu_save"
+                app:backgroundTint="@color/design_default_color_primary"
+                app:tint="@android:color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

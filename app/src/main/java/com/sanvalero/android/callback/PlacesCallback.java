@@ -7,4 +7,5 @@ import java.util.List;
 public interface PlacesCallback {
     void onPlacesLoaded(List<Place> places);
     void onPlacesLoadError(String errorMessage);
+    void onPlaceClicked(Long idPlaceClicked);
 }
