@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/firstNameDetailPersonEditText"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:hint="@string/first_name_person"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/lastNameDetailPersonEditText"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:hint="@string/last_name_person"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/emailDetailPersonEditText"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:hint="@string/email_person"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/passwordDetailPersonEditText"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:hint="@string/password_person"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/birthDateDetailPersonEditText"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:hint="@string/birth_date_person"
+                android:inputType="date" />
+
+            <EditText
+                android:id="@+id/heightDetailPersonEditText"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:hint="@string/height_person"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/interestsDetailPersonEditText"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:hint="@string/interests_person"
+                android:inputType="textMultiLine" />
+
+            <CheckBox
+                android:id="@+id/verifiedDetailPersonCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:text="@string/verified_person"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:paddingLeft="0dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp">
+
+        <Switch
+            android:id="@+id/allowEditPersonSwitch"
+            android:layout_width="145dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layoutDirection="rtl"
+            android:text="Editable"
+            android:textAlignment="textStart"
+            android:textSize="20sp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/favoritePersonFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:contentDescription="@string/favorite_button"
+            android:src="@android:drawable/btn_star_big_on"
+            app:tint="@android:color/white"
+            app:backgroundTint="@color/design_default_color_secondary" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/deletePersonFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:contentDescription="@string/delete_button"
+            android:src="@android:drawable/ic_menu_delete"
+            app:tint="@android:color/white"
+            app:backgroundTint="@android:color/holo_red_dark" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/updatePersonFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/update_button"
+            android:src="@android:drawable/ic_menu_save"
+            app:tint="@android:color/white"
+            app:backgroundTint="@color/design_default_color_primary" />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

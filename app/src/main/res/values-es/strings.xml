@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Eventos API</string>
+    <!--  Main  -->
+    <string name="main_activity">Inicio</string>
+    <string name="title_main_activity">Eventos API</string>
+    <string name="subtitle_main_activity">Gestor de Personas y Lugares</string>
+    <!--  Person  -->
+    <string name="person">Persona</string>
+    <string name="persons">Personas</string>
+    <string name="id_person">ID</string>
+    <string name="full_name_person">Nombre completo</string>
+    <string name="first_name_person">Nombre</string>
+    <string name="last_name_person">Apellido</string>
+    <string name="email_person">E-mail</string>
+    <string name="password_person">Contraseña</string>
+    <string name="age_person">Edad</string>
+    <string name="height_person">Altura (m)</string>
+    <string name="interests_person">Intereses</string>
+    <string name="birth_date_person">Fecha de nacimiento</string>
+    <string name="verified_person">Verificado</string>
+    <!--  Place  -->
+    <string name="place">Lugar</string>
+    <string name="places">Lugares</string>
+    <string name="id_place">ID</string>
+    <string name="name_place">Nombre</string>
+    <string name="address_place">Dirección</string>
+    <string name="capacity_place">Capacidad</string>
+    <string name="area_place">Superficie (m²)</string>
+    <string name="inauguration_date_place">Fecha de inauguración</string>
+    <string name="has_parking_place">Tiene aparcamiento</string>
+    <string name="equipment_place">Equipamiento</string>
+    <!--  All Persons  -->
+    <string name="persons_activity">Personas</string>
+    <!--  All Places  -->
+    <string name="places_activity">Lugares</string>
+    <!--  Person Details (& delete) -->
+    <string name="person_activity">Persona</string>
+    <!--  Place Details (& delete)  -->
+    <string name="place_activity">Lugar</string>
+    <!--  Create Person  -->
+    <string name="new_person_activity">Nueva Persona</string>
+    <!--  Create Place  -->
+    <string name="new_place_activity">Nuevo Lugar</string>
+    <!--  Forms  -->
+    <string name="error_required">Este campo es obligatorio</string>
+    <string name="error_required_toast">Faltan campos obligatorios</string>
+    <string name="new_person_toast">Persona creada</string>
+    <string name="confirmation_title_dialog">Confirmar</string>
+    <string name="confirm_create_person_text_dialog">¿Está seguro que desea crear esta persona?</string>
+    <string name="error_title_dialog">Error</string>
+    <string name="error_api_text_dialog">Error durante la operación de la API</string>
+    <string name="confirm_create_place_text_dialog">¿Está seguro que desea crear este lugar?</string>
+    <string name="new_place_toast">Lugar creado</string>
+    <string name="update_button">Actualizar</string>
+    <string name="delete_button">Eliminar</string>
+    <string name="favorite_button">Añadir a Favoritos</string>
+    <string name="new_address_from_map">Nueva dirección asignada mediante el mapa</string>
+    <string name="address_not_found_in_map">Dirección no encontrada en ese punto</string>
+    <string name="confirm_update_place_text_dialog">¿Está seguro que desea actualizar este lugar?</string>
+    <string name="place_updated">Lugar actualizado</string>
+    <string name="update_not_allowed">" Es necesario activar el modo de edición para ejecutar la actualización"</string>
+    <string name="confirm_delete_place_text_dialog">¿Está seguro que desea ELIMINAR este lugar?</string>
+    <string name="successfully_delete">Eliminado satisfactoriamente</string>
+    <string name="confirm_update_person_text_dialog">¿Está seguro que desea actualizar esta persona?</string>
+    <string name="confirm_delete_person_text_dialog">¿Está seguro que desea ELIMINAR esta persona?</string>
+    <string name="person_updated">Persona actualizada</string>
+    <string name="added_to_favourites">+ Añadido a favoritos</string>
+    <string name="removed_to_favourites">- Eliminado de favoritos</string>
+    <string name="favourite_persons_activity">Personas Favoritas</string>
+    <string name="favourite_places_activity">Lugares Favoritos</string>
+    <string name="empty_favourite_persons">Personas Favoritas Vaciado</string>
+    <string name="empty_favourite_places">Lugares Favoritos Vaciado</string>
+    <string name="confirm_delete_favourite_persons_text_dialog">¿Está seguro que desea ELIMINAR todos los registros favoritos de personas?</string>
+    <string name="confirm_delete_favourite_places_text_dialog">¿Está seguro que desea ELIMINAR todos los registros favoritos de lugares?</string>
+</resources>

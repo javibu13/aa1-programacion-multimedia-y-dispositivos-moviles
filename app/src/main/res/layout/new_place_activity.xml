@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/nameNewPlaceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:maxLength="100"
+            android:hint="@string/name_place"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/addressNewPlaceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:hint="@string/address_place"
+            android:inputType="textPostalAddress"
+            android:maxLength="200" />
+
+        <FrameLayout
+            android:id="@+id/mapFragmentNewPlaceContainer"
+            android:layout_width="match_parent"
+            android:layout_height="230dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/capacityNewPlaceEditText"
+                android:layout_width="189dp"
+                android:layout_height="65dp"
+                android:hint="@string/capacity_place"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/areaNewPlaceEditText"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:hint="@string/area_place"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/inaugurationDateNewPlaceEditText"
+                android:layout_width="189dp"
+                android:layout_height="65dp"
+                android:hint="@string/inauguration_date_place"
+                android:inputType="date" />
+
+            <CheckBox
+                android:id="@+id/hasParkingNewPlaceCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/has_parking_place"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/equipmentNewPlaceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:hint="@string/equipment_place"
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/newPlaceButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/new_place_activity"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>

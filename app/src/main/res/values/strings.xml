@@ -1,3 +1,75 @@
 <resources>
-    <string name="app_name">android</string>
+    <string name="app_name">API Events</string>
+    <!--  Main  -->
+    <string name="main_activity">Home</string>
+    <string name="title_main_activity">API Events</string>
+    <string name="subtitle_main_activity">Persons and Places manager</string>
+    <!--  Person  -->
+    <string name="person">Person</string>
+    <string name="persons">Persons</string>
+    <string name="id_person">ID</string>
+    <string name="full_name_person">Full Name</string>
+    <string name="first_name_person">First Name</string>
+    <string name="last_name_person">Last Name</string>
+    <string name="email_person">Email</string>
+    <string name="password_person">Password</string>
+    <string name="age_person">Age</string>
+    <string name="height_person">Height (m)</string>
+    <string name="interests_person">Interests</string>
+    <string name="birth_date_person">Birth Date</string>
+    <string name="verified_person">Verified</string>
+    <!--  Place  -->
+    <string name="place">Place</string>
+    <string name="places">Places</string>
+    <string name="id_place">ID</string>
+    <string name="name_place">Name</string>
+    <string name="address_place">Address</string>
+    <string name="capacity_place">Capacity</string>
+    <string name="area_place">Area (m²)</string>
+    <string name="inauguration_date_place">Inauguration Date</string>
+    <string name="has_parking_place">Has Parking</string>
+    <string name="equipment_place">Equipment</string>
+    <!--  All Persons  -->
+    <string name="persons_activity">Persons</string>
+    <!--  All Places  -->
+    <string name="places_activity">Places</string>
+    <!--  Person Details (& delete & update) -->
+    <string name="person_activity">Person</string>
+    <!--  Place Details (& delete & update)  -->
+    <string name="place_activity">Place</string>
+    <!--  Create Person  -->
+    <string name="new_person_activity">New Person</string>
+    <!--  Create Place  -->
+    <string name="new_place_activity">New Place</string>
+    <!--  General  -->
+    <string name="error_required">This field is required</string>
+    <string name="error_required_toast">Missing required fields</string>
+    <string name="new_person_toast">Person created</string>
+    <string name="confirmation_title_dialog">Confirm</string>
+    <string name="confirm_create_person_text_dialog">Are you sure you want to create this person?</string>
+    <string name="error_title_dialog">Error</string>
+    <string name="error_api_text_dialog">Error during API operation</string>
+    <string name="confirm_create_place_text_dialog">Are you sure you want to create this place?</string>
+    <string name="new_place_toast" >Place created</string>
+    <string name="update_button">Update</string>
+    <string name="delete_button">Delete</string>
+    <string name="favorite_button">Add to Favorites</string>
+    <string name="new_address_from_map">New address set using map</string>
+    <string name="address_not_found_in_map">Address not found at that point</string>
+    <string name="confirm_update_place_text_dialog" >Are you sure you want to update this place?</string>
+    <string name="place_updated" >Place updated</string>
+    <string name="update_not_allowed" >Activated edit mode is needed to execute update</string>
+    <string name="confirm_delete_place_text_dialog" >Are you sure you want to DELETE this place?</string>
+    <string name="successfully_delete" >Successfully deleted</string>
+    <string name="confirm_update_person_text_dialog" >Are you sure you want to update this person?</string>
+    <string name="confirm_delete_person_text_dialog" >Are you sure you want to DELETE this person?</string>
+    <string name="person_updated" >Person updated</string>
+    <string name="added_to_favourites" >+ Added to favourites</string>
+    <string name="removed_to_favourites" >- Removed from favourites</string>
+    <string name="favourite_persons_activity" >Favourite Persons</string>
+    <string name="favourite_places_activity" >Favourite Places</string>
+    <string name="empty_favourite_persons" >Favourite Persons Empty</string>
+    <string name="empty_favourite_places" >Favourite Places Empty</string>
+    <string name="confirm_delete_favourite_persons_text_dialog" >Are you sure you want to DELETE all favourite person registers?</string>
+    <string name="confirm_delete_favourite_places_text_dialog" >Are you sure you want to DELETE all favourite place registers?</string>
 </resources>

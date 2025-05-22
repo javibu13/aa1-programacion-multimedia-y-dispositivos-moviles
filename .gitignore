@@ -1,3 +1,7 @@
+# Mapbox config files (secrets)
+app/src/main/res/values/developer-config.xml
+settings.gradle.kts
+
 # Gradle files
 .gradle/
 build/
