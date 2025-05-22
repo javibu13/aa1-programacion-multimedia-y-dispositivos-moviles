@@ -122,6 +122,17 @@ public class PlaceActivity extends BaseActivity implements PlaceCallback, Mapbox
                 Toast.makeText(this, getString(R.string.error_required_toast), Toast.LENGTH_LONG).show();
             }
         });
+
+        deleteFab.setOnClickListener(view -> {
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.confirmation_title_dialog)
+                    .setMessage(R.string.confirm_delete_place_text_dialog)
+                    .setPositiveButton(android.R.string.ok, (dialog, which) -> {
+                        deletePlace();
+                    })
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .show();
+        });
     }
 
     private void onEditableSwitchChange(boolean isChecked) {
@@ -223,6 +234,10 @@ public class PlaceActivity extends BaseActivity implements PlaceCallback, Mapbox
         placePresenter.updatePlace(place);
     }
 
+    private void deletePlace() {
+        placePresenter.deletePlace();
+    }
+
     @Override
     public void onPlaceLoaded(Place place) {
         nameEditText.setText(place.getName());
@@ -254,7 +269,8 @@ public class PlaceActivity extends BaseActivity implements PlaceCallback, Mapbox
 
     @Override
     public void onPlaceDeleted() {
-
+        Toast.makeText(this, getString(R.string.successfully_delete), Toast.LENGTH_LONG).show();
+        finish();
     }
 
     @Override

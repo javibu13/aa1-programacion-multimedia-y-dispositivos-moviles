@@ -119,7 +119,9 @@ public class MapboxFragment extends Fragment {
                     this.centerView(point, 16.0);
                     return true;
                 });
-                mapboxReadyListener.onMapboxReady();
+                if (mapboxReadyListener != null) {
+                    mapboxReadyListener.onMapboxReady();
+                }
             }
         });
 

@@ -59,4 +59,6 @@
     <string name="confirm_update_place_text_dialog" >Are you sure you want to update this place?</string>
     <string name="place_updated" >Place updated</string>
     <string name="update_not_allowed" >Activated edit mode is needed to execute update</string>
+    <string name="confirm_delete_place_text_dialog" >Are you sure you want to DELETE this place?</string>
+    <string name="successfully_delete" >Successfully deleted</string>
 </resources>

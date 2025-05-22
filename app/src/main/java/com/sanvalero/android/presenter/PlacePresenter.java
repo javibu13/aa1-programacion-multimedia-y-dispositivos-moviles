@@ -80,4 +80,31 @@ public class PlacePresenter {
             }
         });
     }
+
+    public void deletePlace() {
+        Retrofit retrofit = ApiClient.getClient();
+
+        PlaceService service = retrofit.create(PlaceService.class);
+        Call<Void> call = service.deletePlaceById(id);
+
+        Log.w("PlacePresenter", "Pre-CallEnqueue");
+
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                Log.w("PlacePresenter", "Callback ok");
+                if (response.isSuccessful()) {
+                    callback.onPlaceDeleted();
+                } else {
+                    callback.onPlaceDeleteError(response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Log.w("PlacePresenter", "Callback fail");
+                callback.onPlaceDeleteError(t.getMessage());
+            }
+        });
+    }
 }
