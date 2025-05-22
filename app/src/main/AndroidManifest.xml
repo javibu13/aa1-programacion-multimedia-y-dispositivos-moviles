@@ -41,9 +41,9 @@
         <activity
             android:name=".view.NewPlaceActivity"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".view.PersonActivity"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".view.PersonActivity"
+            android:exported="false" />
         <activity
             android:name=".view.PlaceActivity"
             android:exported="false" />

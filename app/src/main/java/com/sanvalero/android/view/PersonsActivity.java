@@ -59,7 +59,7 @@ public class PersonsActivity extends BaseActivity implements PersonsCallback {
                 .setPositiveButton("OK", null)
                 .show();
         }
-        adapter = new PersonsAdapter(persons);
+        adapter = new PersonsAdapter(this, persons);
         recyclerView.setAdapter(adapter);
     }
 
@@ -76,5 +76,12 @@ public class PersonsActivity extends BaseActivity implements PersonsCallback {
                 finish();
             })
             .show();
+    }
+
+    @Override
+    public void onPersonClicked(Long idPersonClicked) {
+        Intent intent = new Intent(PersonsActivity.this, PersonActivity.class);
+        intent.putExtra("person_id", idPersonClicked);
+        startActivity(intent);
     }
 }

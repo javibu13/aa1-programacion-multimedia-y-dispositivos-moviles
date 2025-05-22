@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sanvalero.android.R;
+import com.sanvalero.android.callback.PersonsCallback;
+import com.sanvalero.android.callback.PlacesCallback;
 import com.sanvalero.android.model.Person;
 import com.sanvalero.android.model.Place;
 
@@ -18,9 +20,11 @@ import java.util.List;
 
 public class PersonsAdapter extends RecyclerView.Adapter<PersonsAdapter.PersonViewHolder> {
 
+    private PersonsCallback callback;
     private List<Person> personList;
 
-    public PersonsAdapter(List<Person> personList) {
+    public PersonsAdapter(PersonsCallback callback, List<Person> personList) {
+        this.callback = callback;
         this.personList = personList;
     }
 
@@ -47,6 +51,7 @@ public class PersonsAdapter extends RecyclerView.Adapter<PersonsAdapter.PersonVi
             @Override
             public void onClick(View v) {
                 Log.d("PersonAdapter", "Clicked: " + person.getFirstName() + " " + person.getLastName());
+                callback.onPersonClicked(person.getId());
             }
         });
     }

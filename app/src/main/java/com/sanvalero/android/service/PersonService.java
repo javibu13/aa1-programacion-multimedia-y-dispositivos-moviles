@@ -17,14 +17,14 @@ public interface PersonService {
     Call<List<Person>> getPersons();
 
     @GET("persons/{idPerson}")
-    Call<Person> getPersonById(@Path("idPerson") int idPerson);
+    Call<Person> getPersonById(@Path("idPerson") Long idPerson);
 
     @POST("persons")
     Call<Person> createPerson(@Body Person person);
 
     @PUT("persons/{idPerson}")
-    Call<Person> updatePersonById(@Path("idPerson") int idPerson, @Body Person person);
+    Call<Person> updatePersonById(@Path("idPerson") Long idPerson, @Body Person person);
 
     @DELETE("persons/{idPerson}")
-    Call<Void> deletePersonById(@Path("idPerson") int idPerson);
+    Call<Void> deletePersonById(@Path("idPerson") Long idPerson);
 }

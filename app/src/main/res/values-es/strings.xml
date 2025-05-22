@@ -61,4 +61,7 @@
     <string name="update_not_allowed">" Es necesario activar el modo de edición para ejecutar la actualización"</string>
     <string name="confirm_delete_place_text_dialog">¿Está seguro que desea ELIMINAR este lugar?</string>
     <string name="successfully_delete">Eliminado satisfactoriamente</string>
+    <string name="confirm_update_person_text_dialog">¿Está seguro que desea actualizar esta persona?</string>
+    <string name="confirm_delete_person_text_dialog">¿Está seguro que desea ELIMINAR esta persona?</string>
+    <string name="person_updated">Persona actualizada</string>
 </resources>

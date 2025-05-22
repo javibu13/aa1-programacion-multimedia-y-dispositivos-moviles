@@ -8,4 +8,5 @@ import java.util.List;
 public interface PersonsCallback {
     void onPersonsLoaded(List<Person> persons);
     void onPersonsLoadError(String errorMessage);
+    void onPersonClicked(Long idPersonClicked);
 }

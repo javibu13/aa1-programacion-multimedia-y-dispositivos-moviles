@@ -61,4 +61,7 @@
     <string name="update_not_allowed" >Activated edit mode is needed to execute update</string>
     <string name="confirm_delete_place_text_dialog" >Are you sure you want to DELETE this place?</string>
     <string name="successfully_delete" >Successfully deleted</string>
+    <string name="confirm_update_person_text_dialog" >Are you sure you want to update this person?</string>
+    <string name="confirm_delete_person_text_dialog" >Are you sure you want to DELETE this person?</string>
+    <string name="person_updated" >Person updated</string>
 </resources>

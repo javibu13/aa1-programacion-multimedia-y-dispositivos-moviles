@@ -77,10 +77,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="end"
         android:layout_gravity="bottom|end"
-        android:padding="16dp">
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:paddingLeft="0dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp">
+
+        <Switch
+            android:id="@+id/allowEditPersonSwitch"
+            android:layout_width="145dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layoutDirection="rtl"
+            android:text="Editable"
+            android:textAlignment="textStart"
+            android:textSize="20sp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/favoritePersonFab"

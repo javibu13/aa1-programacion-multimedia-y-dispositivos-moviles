@@ -152,8 +152,8 @@ public class PlaceActivity extends BaseActivity implements PlaceCallback, Mapbox
         areaEditText.setFocusableInTouchMode(isChecked);
         areaEditText.setClickable(isChecked);
 
-        inaugurationDateEditText.setFocusable(isChecked);
-        inaugurationDateEditText.setFocusableInTouchMode(isChecked);
+        inaugurationDateEditText.setFocusable(false);
+        inaugurationDateEditText.setFocusableInTouchMode(false);
         inaugurationDateEditText.setClickable(isChecked);
 
         equipmentEditText.setFocusable(isChecked);
