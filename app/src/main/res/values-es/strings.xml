@@ -64,4 +64,12 @@
     <string name="confirm_update_person_text_dialog">¿Está seguro que desea actualizar esta persona?</string>
     <string name="confirm_delete_person_text_dialog">¿Está seguro que desea ELIMINAR esta persona?</string>
     <string name="person_updated">Persona actualizada</string>
+    <string name="added_to_favourites">+ Añadido a favoritos</string>
+    <string name="removed_to_favourites">- Eliminado de favoritos</string>
+    <string name="favourite_persons_activity">Personas Favoritas</string>
+    <string name="favourite_places_activity">Lugares Favoritos</string>
+    <string name="empty_favourite_persons">Personas Favoritas Vaciado</string>
+    <string name="empty_favourite_places">Lugares Favoritos Vaciado</string>
+    <string name="confirm_delete_favourite_persons_text_dialog">¿Está seguro que desea ELIMINAR todos los registros favoritos de personas?</string>
+    <string name="confirm_delete_favourite_places_text_dialog">¿Está seguro que desea ELIMINAR todos los registros favoritos de lugares?</string>
 </resources>

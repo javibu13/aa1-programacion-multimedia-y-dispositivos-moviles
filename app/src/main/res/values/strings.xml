@@ -64,4 +64,12 @@
     <string name="confirm_update_person_text_dialog" >Are you sure you want to update this person?</string>
     <string name="confirm_delete_person_text_dialog" >Are you sure you want to DELETE this person?</string>
     <string name="person_updated" >Person updated</string>
+    <string name="added_to_favourites" >+ Added to favourites</string>
+    <string name="removed_to_favourites" >- Removed from favourites</string>
+    <string name="favourite_persons_activity" >Favourite Persons</string>
+    <string name="favourite_places_activity" >Favourite Places</string>
+    <string name="empty_favourite_persons" >Favourite Persons Empty</string>
+    <string name="empty_favourite_places" >Favourite Places Empty</string>
+    <string name="confirm_delete_favourite_persons_text_dialog" >Are you sure you want to DELETE all favourite person registers?</string>
+    <string name="confirm_delete_favourite_places_text_dialog" >Are you sure you want to DELETE all favourite place registers?</string>
 </resources>

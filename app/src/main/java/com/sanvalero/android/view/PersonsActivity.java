@@ -41,6 +41,12 @@ public class PersonsActivity extends BaseActivity implements PersonsCallback {
             Intent intent = new Intent(this, NewPersonActivity.class);
             startActivity(intent);
         });
+
+        FloatingActionButton favouritePersonsFloatingActionButton = findViewById(R.id.favouritePersonsFloatingActionButton);
+        favouritePersonsFloatingActionButton.setOnClickListener(view -> {
+            Intent intent = new Intent(this, FavouritePersonsActivity.class);
+            startActivity(intent);
+        });
     }
 
     @Override

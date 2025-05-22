@@ -30,11 +30,19 @@
         <activity
             android:name=".view.PersonsActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat"></activity>
+            android:theme="@style/Theme.AppCompat"/>
         <activity
             android:name=".view.PlacesActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat"></activity>
+            android:theme="@style/Theme.AppCompat"/>
+        <activity
+            android:name=".view.FavouritePersonsActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat"/>
+        <activity
+            android:name=".view.FavouritePlacesActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat"/>
         <activity
             android:name=".view.NewPersonActivity"
             android:exported="false" />

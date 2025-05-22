@@ -2,6 +2,7 @@ package com.sanvalero.android.view;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
@@ -10,12 +11,15 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.room.Room;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mapbox.geojson.Point;
 import com.sanvalero.android.R;
 import com.sanvalero.android.callback.NewPersonCallback;
 import com.sanvalero.android.callback.PersonCallback;
+import com.sanvalero.android.database.AppDatabase;
+import com.sanvalero.android.database.PersonFav;
 import com.sanvalero.android.model.Person;
 import com.sanvalero.android.presenter.NewPersonPresenter;
 import com.sanvalero.android.presenter.PersonPresenter;
@@ -120,6 +124,28 @@ public class PersonActivity extends BaseActivity implements PersonCallback {
                     })
                     .setNegativeButton(android.R.string.cancel, null)
                     .show();
+        });
+
+        favoriteFab.setOnClickListener(view -> {
+            AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, "PersonFav")
+                    .allowMainThreadQueries()
+                    .fallbackToDestructiveMigration().build();
+            PersonFav personFav = db.personFavDao().findById(id);
+            if (personFav == null) {
+                Log.i("DATABASE ROOM", "No personFav found by id");
+                // Create register
+                db.personFavDao().insert(new PersonFav(id, true));
+                Toast.makeText(this, getString(R.string.added_to_favourites), Toast.LENGTH_SHORT).show();
+            } else {
+                Log.i("DATABASE ROOM", personFav.getId().toString());
+                personFav.setFavourite(!personFav.isFavourite());
+                db.personFavDao().update(personFav);
+                if (personFav.isFavourite()) {
+                    Toast.makeText(this, getString(R.string.added_to_favourites), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, getString(R.string.removed_to_favourites), Toast.LENGTH_SHORT).show();
+                }
+            }
         });
     }
 

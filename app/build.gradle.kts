@@ -49,6 +49,8 @@ android {
 }
 
 dependencies {
+    implementation("androidx.room:room-runtime:2.4.3")
+    annotationProcessor("androidx.room:room-compiler:2.4.3")
     implementation("com.mapbox.maps:android:11.12.1")
     implementation("com.mapbox.search:mapbox-search-android:2.12.0-beta.1")
     implementation("androidx.appcompat:appcompat:1.6.1")

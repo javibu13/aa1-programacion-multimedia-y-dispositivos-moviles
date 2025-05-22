@@ -42,6 +42,12 @@ public class PlacesActivity extends BaseActivity implements PlacesCallback {
             Intent intent = new Intent(this, NewPlaceActivity.class);
             startActivity(intent);
         });
+
+        FloatingActionButton favouritePlacesFloatingActionButton = findViewById(R.id.favouritePlacesFloatingActionButton);
+        favouritePlacesFloatingActionButton.setOnClickListener(view -> {
+            Intent intent = new Intent(this, FavouritePlacesActivity.class);
+            startActivity(intent);
+        });
     }
 
     @Override

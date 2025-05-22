@@ -10,11 +10,15 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.room.Room;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mapbox.geojson.Point;
 import com.sanvalero.android.R;
 import com.sanvalero.android.callback.PlaceCallback;
+import com.sanvalero.android.database.AppDatabase;
+import com.sanvalero.android.database.PersonFav;
+import com.sanvalero.android.database.PlaceFav;
 import com.sanvalero.android.fragment.MapboxFragment;
 import com.sanvalero.android.model.Place;
 import com.sanvalero.android.presenter.PlacePresenter;
@@ -132,6 +136,28 @@ public class PlaceActivity extends BaseActivity implements PlaceCallback, Mapbox
                     })
                     .setNegativeButton(android.R.string.cancel, null)
                     .show();
+        });
+
+        favoriteFab.setOnClickListener(view -> {
+            AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, "PlaceFav")
+                    .allowMainThreadQueries()
+                    .fallbackToDestructiveMigration().build();
+            PlaceFav placeFav = db.placeFavDao().findById(id);
+            if (placeFav == null) {
+                Log.i("DATABASE ROOM", "No placeFav found by id");
+                // Create register
+                db.placeFavDao().insert(new PlaceFav(id, true));
+                Toast.makeText(this, getString(R.string.added_to_favourites), Toast.LENGTH_SHORT).show();
+            } else {
+                Log.i("DATABASE ROOM", placeFav.getId().toString());
+                placeFav.setFavourite(!placeFav.isFavourite());
+                db.placeFavDao().update(placeFav);
+                if (placeFav.isFavourite()) {
+                    Toast.makeText(this, getString(R.string.added_to_favourites), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, getString(R.string.removed_to_favourites), Toast.LENGTH_SHORT).show();
+                }
+            }
         });
     }
 
